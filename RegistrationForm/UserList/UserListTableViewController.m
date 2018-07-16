@@ -22,10 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.userLists = [NSArray new];
-    
 
+    self.userLists = [NSArray new];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -78,6 +76,7 @@
         
     }
 }
+
 
 #pragma mark - Segue
 

@@ -51,6 +51,18 @@
     return NO; 
 }
 
+- (NSArray <FieldFormModel *> *)fieldsWithKeys:(NSArray *)keysList {
+  
+    NSMutableArray *array = [NSMutableArray new];
+    
+    for (FieldFormModel *field in self.rowsArray) {
+        if ([keysList containsObject:field.key]) {
+            [array addObject:field];
+        }
+    }
+    return array;
+}
+
 - (FieldFormModel *)addNameFieldWithTitle:(NSString *)title andKey:(NSString *)key withMessage:(NSString *)message {
     return [self addFieldWithTitle:title andKey:key required:YES keyboardType:UIKeyboardTypeDefault withMessage:message];
 }
@@ -98,9 +110,9 @@
 }
 
 - (FieldFormModel *) fieldWithKey:(NSString *)key {
-    for (FieldFormModel *model in self.rowsArray) {
-        if ([model.key isEqualToString:key]) {
-            return model;
+    for (FieldFormModel *field in self.rowsArray) {
+        if ([field.key isEqualToString:key]) {
+            return field;
         }
     }
     return nil;

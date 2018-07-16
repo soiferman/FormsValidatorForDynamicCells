@@ -18,10 +18,12 @@
 		1D9B92C320F5019F00AFF65D /* UserListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92C220F5019F00AFF65D /* UserListTableViewController.m */; };
 		1D9B92C620F50B8700AFF65D /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92C420F50B8700AFF65D /* UserModel.xcdatamodeld */; };
 		1D9B92CE20F5EF2100AFF65D /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92CD20F5EF2100AFF65D /* UserModel.m */; };
+		1DC3030C20F8CD7D00E7071E /* ToDoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3030B20F8CD7D00E7071E /* ToDoModel.m */; };
 		1DDDECE920EE1F0B007CC735 /* FieldFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDDECE820EE1F0B007CC735 /* FieldFormModel.m */; };
 		1DDDECEC20EE405E007CC735 /* BaseFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDDECEB20EE405E007CC735 /* BaseFormModel.m */; };
 		1DEA900720F63D8B00068833 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA900520F63D8B00068833 /* CoreDataStack.m */; };
 		1DEA900A20F755A600068833 /* BaseManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA900920F755A600068833 /* BaseManagedObject.m */; };
+		1DEA900E20F7899A00068833 /* UserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA900D20F7899A00068833 /* UserInfoTableViewController.m */; };
 		1DEE96E220E4C7C100DA0806 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE96E120E4C7C100DA0806 /* AppDelegate.m */; };
 		1DEE96E520E4C7C100DA0806 /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE96E420E4C7C100DA0806 /* UserDetailViewController.m */; };
 		1DEE96E820E4C7C100DA0806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DEE96E620E4C7C100DA0806 /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 		1D9B92C520F50B8700AFF65D /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
 		1D9B92CC20F5EF2100AFF65D /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		1D9B92CD20F5EF2100AFF65D /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		1DC3030A20F8CD7D00E7071E /* ToDoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoModel.h; sourceTree = "<group>"; };
+		1DC3030B20F8CD7D00E7071E /* ToDoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoModel.m; sourceTree = "<group>"; };
 		1DDDECE720EE1F0B007CC735 /* FieldFormModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldFormModel.h; sourceTree = "<group>"; };
 		1DDDECE820EE1F0B007CC735 /* FieldFormModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FieldFormModel.m; sourceTree = "<group>"; };
 		1DDDECEA20EE405E007CC735 /* BaseFormModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseFormModel.h; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 		1DEA900620F63D8B00068833 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
 		1DEA900820F755A600068833 /* BaseManagedObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseManagedObject.h; sourceTree = "<group>"; };
 		1DEA900920F755A600068833 /* BaseManagedObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseManagedObject.m; sourceTree = "<group>"; };
+		1DEA900C20F7899A00068833 /* UserInfoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoTableViewController.h; sourceTree = "<group>"; };
+		1DEA900D20F7899A00068833 /* UserInfoTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoTableViewController.m; sourceTree = "<group>"; };
 		1DEE96DD20E4C7C100DA0806 /* RegistrationForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RegistrationForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DEE96E020E4C7C100DA0806 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1DEE96E120E4C7C100DA0806 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -154,6 +160,8 @@
 				1DEA900920F755A600068833 /* BaseManagedObject.m */,
 				1D9B92CC20F5EF2100AFF65D /* UserModel.h */,
 				1D9B92CD20F5EF2100AFF65D /* UserModel.m */,
+				1DC3030A20F8CD7D00E7071E /* ToDoModel.h */,
+				1DC3030B20F8CD7D00E7071E /* ToDoModel.m */,
 			);
 			path = CoreDataModel;
 			sourceTree = "<group>";
@@ -165,6 +173,15 @@
 				1DEE96FE20E4F76100DA0806 /* FieldsValidator.m */,
 			);
 			path = Validator;
+			sourceTree = "<group>";
+		};
+		1DEA900B20F7893700068833 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1DEA900C20F7899A00068833 /* UserInfoTableViewController.h */,
+				1DEA900D20F7899A00068833 /* UserInfoTableViewController.m */,
+			);
+			path = UserInfo;
 			sourceTree = "<group>";
 		};
 		1DEE96D420E4C7C100DA0806 = {
@@ -192,6 +209,7 @@
 				1D9B92A720F3503E00AFF65D /* Rule */,
 				1DDDECED20EE487B007CC735 /* Validator */,
 				1D9B92C020F5017D00AFF65D /* UserList */,
+				1DEA900B20F7893700068833 /* UserInfo */,
 				1DEE96E020E4C7C100DA0806 /* AppDelegate.h */,
 				1DEE96E120E4C7C100DA0806 /* AppDelegate.m */,
 				1DEE96F620E4D85700DA0806 /* TableViewCell.h */,
@@ -291,6 +309,7 @@
 				1D9B92B920F3974B00AFF65D /* MatchRule.m in Sources */,
 				1D9B92B020F38F3400AFF65D /* EmailRule.m in Sources */,
 				1DEE96F020E4C7C200DA0806 /* main.m in Sources */,
+				1DC3030C20F8CD7D00E7071E /* ToDoModel.m in Sources */,
 				1D9B92BF20F4E44C00AFF65D /* Length.m in Sources */,
 				1DDDECEC20EE405E007CC735 /* BaseFormModel.m in Sources */,
 				1D9B92B320F3917100AFF65D /* PhoneRule.m in Sources */,
@@ -300,6 +319,7 @@
 				1D9B92AA20F3507E00AFF65D /* Rule.m in Sources */,
 				1DDDECE920EE1F0B007CC735 /* FieldFormModel.m in Sources */,
 				1D9B92C320F5019F00AFF65D /* UserListTableViewController.m in Sources */,
+				1DEA900E20F7899A00068833 /* UserInfoTableViewController.m in Sources */,
 				1D9B92CE20F5EF2100AFF65D /* UserModel.m in Sources */,
 				1DEA900A20F755A600068833 /* BaseManagedObject.m in Sources */,
 				1DEA900720F63D8B00068833 /* CoreDataStack.m in Sources */,

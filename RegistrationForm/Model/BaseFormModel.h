@@ -31,9 +31,11 @@
 - (FieldFormModel *)addFieldWithTitle:(NSString *)title andKey:(NSString *)key required:(BOOL)required withMessage:(NSString *)message keyboardType:(UIKeyboardType)keyboardType secureTextEntry:(BOOL)secureTextEntry;
 
 - (FieldFormModel *)fieldWithKey:(NSString *)key;
+- (NSArray <FieldFormModel *> *)fieldsWithKeys:(NSArray *)keysList;
 
 - (void)fillModel:(id)model;
 - (void)fillFieldsWithModel:(id)model;
+
 
 - (BOOL)validate;
 
