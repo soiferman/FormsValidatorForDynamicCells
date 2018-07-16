@@ -11,5 +11,6 @@
 @implementation ToDoModel
 
 @dynamic toDoEvent;
+@dynamic owner;
 
 @end

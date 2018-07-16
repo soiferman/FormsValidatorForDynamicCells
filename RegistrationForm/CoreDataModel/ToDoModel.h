@@ -7,9 +7,11 @@
 //
 
 #import "BaseManagedObject.h"
+#import "UserModel.h"
 
 @interface ToDoModel : BaseManagedObject
 
 @property (nonatomic, strong) NSString *toDoEvent;
+@property (nonatomic, strong) UserModel *owner;
 
 @end

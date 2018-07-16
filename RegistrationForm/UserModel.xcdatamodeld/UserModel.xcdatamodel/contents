@@ -11,10 +11,10 @@
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="position" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="events" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Events" inverseName="owner" inverseEntity="Events" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Events" inverseName="owner" inverseEntity="Events" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Events" positionX="153" positionY="-10" width="128" height="73"/>
+        <element name="Events" positionX="124" positionY="-18" width="128" height="73"/>
         <element name="Users" positionX="-63" positionY="-18" width="128" height="148"/>
     </elements>
 </model>

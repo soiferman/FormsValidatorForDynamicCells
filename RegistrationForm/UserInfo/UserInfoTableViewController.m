@@ -42,11 +42,17 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
     [self fillFormFromModel];
     [self configureAvatarImage];
     
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Events"];
-    self.toDoArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    [self fetchingData];
 
     NSArray *keysArray = @[@"phone", @"email", @"position"];
     self.userFieldsArray = [self.regModel fieldsWithKeys:keysArray];
+    
+}
+
+- (void)fetchingData {
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Events"];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"owner == %@", self.userModel];
+    self.toDoArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     
 }
 
@@ -186,12 +192,12 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
         ToDoModel *model;
         model = [NSEntityDescription insertNewObjectForEntityForName:@"Events" inManagedObjectContext:self.managedObjectContext];
         model.toDoEvent = [[alertController textFields]firstObject].text;
+        model.owner = self.userModel;
         
         [[CoreDataStack sharedManager] saveContext];
 
         //Updating tableview after adding ToDo event with alert
-        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Events"];
-        self.toDoArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+        [self fetchingData];
         
         [self.tableView reloadData];
     }]];

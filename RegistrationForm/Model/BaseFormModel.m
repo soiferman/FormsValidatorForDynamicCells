@@ -110,12 +110,15 @@
 }
 
 - (FieldFormModel *) fieldWithKey:(NSString *)key {
+    
+    return [[self.rowsArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"key == %@", key]] firstObject];
+    /*
     for (FieldFormModel *field in self.rowsArray) {
         if ([field.key isEqualToString:key]) {
             return field;
         }
     }
-    return nil;
+    return nil;*/
 }
 
 - (BOOL)validate {
