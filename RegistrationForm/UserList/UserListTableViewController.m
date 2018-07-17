@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.userLists = [NSArray new];
 }
 
@@ -30,10 +30,13 @@
     [super viewWillAppear:animated];
     
     //Loading data from CoreData
+    [self fetchingUsersFromCoreData];
+}
+
+- (void)fetchingUsersFromCoreData {
     NSFetchRequest *fetchRequst = [NSFetchRequest fetchRequestWithEntityName:@"Users"];
     self.userLists = [self.managedObjectContext executeFetchRequest:fetchRequst error:nil];
     [self.tableView reloadData];
-    
 }
 
 #pragma mark - CoreData

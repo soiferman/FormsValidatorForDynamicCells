@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D34054E20ECE31700D62CE5 /* RegistrationFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D34054D20ECE31700D62CE5 /* RegistrationFormModel.m */; };
+		1D44B66B20FDF80A00C581C3 /* ToDoFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44B66A20FDF80A00C581C3 /* ToDoFormModel.m */; };
 		1D9B92AA20F3507E00AFF65D /* Rule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92A920F3507E00AFF65D /* Rule.m */; };
 		1D9B92AD20F3565C00AFF65D /* NameRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92AC20F3565C00AFF65D /* NameRule.m */; };
 		1D9B92B020F38F3400AFF65D /* EmailRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92AF20F38F3400AFF65D /* EmailRule.m */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		1D34054C20ECE31700D62CE5 /* RegistrationFormModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistrationFormModel.h; sourceTree = "<group>"; };
 		1D34054D20ECE31700D62CE5 /* RegistrationFormModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistrationFormModel.m; sourceTree = "<group>"; };
+		1D44B66920FDF80A00C581C3 /* ToDoFormModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoFormModel.h; sourceTree = "<group>"; };
+		1D44B66A20FDF80A00C581C3 /* ToDoFormModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoFormModel.m; sourceTree = "<group>"; };
 		1D9B92A820F3507E00AFF65D /* Rule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rule.h; sourceTree = "<group>"; };
 		1D9B92A920F3507E00AFF65D /* Rule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rule.m; sourceTree = "<group>"; };
 		1D9B92AB20F3565C00AFF65D /* NameRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NameRule.h; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				1D34054D20ECE31700D62CE5 /* RegistrationFormModel.m */,
 				1DDDECE720EE1F0B007CC735 /* FieldFormModel.h */,
 				1DDDECE820EE1F0B007CC735 /* FieldFormModel.m */,
+				1D44B66920FDF80A00C581C3 /* ToDoFormModel.h */,
+				1D44B66A20FDF80A00C581C3 /* ToDoFormModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 				1D9B92B920F3974B00AFF65D /* MatchRule.m in Sources */,
 				1D9B92B020F38F3400AFF65D /* EmailRule.m in Sources */,
 				1DEE96F020E4C7C200DA0806 /* main.m in Sources */,
+				1D44B66B20FDF80A00C581C3 /* ToDoFormModel.m in Sources */,
 				1DC3030C20F8CD7D00E7071E /* ToDoModel.m in Sources */,
 				1D9B92BF20F4E44C00AFF65D /* Length.m in Sources */,
 				1DDDECEC20EE405E007CC735 /* BaseFormModel.m in Sources */,

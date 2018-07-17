@@ -12,6 +12,9 @@
 #import "UserDetailViewController.h"
 #import "ToDoModel.h"
 
+#import "FieldsValidator.h"
+#import "NameRule.h"
+
 @interface UserInfoTableViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) RegistrationFormModel *regModel;
@@ -27,6 +30,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImage;
 
+@property (nonatomic, strong) FieldsValidator *validator;
+
 
 @end
 
@@ -39,9 +44,11 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
     [super viewDidLoad];
     self.regModel = [[RegistrationFormModel alloc]init];
     self.toDoArray = [NSArray new];
+    self.validator = [FieldsValidator new];
     [self fillFormFromModel];
     [self configureAvatarImage];
-    
+
+
     [self fetchingData];
 
     NSArray *keysArray = @[@"phone", @"email", @"position"];
@@ -150,10 +157,9 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
         // Deleting row from the data source
         [self.managedObjectContext deleteObject:[self.toDoArray objectAtIndex:indexPath.row]];
         [self.managedObjectContext save:nil];
+
+        [self fetchingData];
         
-        NSFetchRequest *fetchRequst = [NSFetchRequest fetchRequestWithEntityName:@"Events"];
-        self.toDoArray = [self.managedObjectContext executeFetchRequest:fetchRequst error:nil];
-    
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         //---
     }];
@@ -172,7 +178,6 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
     }
 }
 
-
 #pragma mark - Alert
 
 - (void)addToDoNote {
@@ -182,6 +187,7 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
         textField.placeholder = @"Place your text here";
         textField.textColor = [UIColor blueColor];
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+      
         
     }];
     
@@ -193,6 +199,9 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
         model = [NSEntityDescription insertNewObjectForEntityForName:@"Events" inManagedObjectContext:self.managedObjectContext];
         model.toDoEvent = [[alertController textFields]firstObject].text;
         model.owner = self.userModel;
+        
+        
+        
         
         [[CoreDataStack sharedManager] saveContext];
 
