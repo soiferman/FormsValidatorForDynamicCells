@@ -12,7 +12,7 @@
 #import "PhoneRule.h"
 #import "PasswordRule.h"
 #import "MatchRule.h"
-#import "Length.h"
+#import "LengthRule.h"
 
 @interface RegistrationFormModel ()
 

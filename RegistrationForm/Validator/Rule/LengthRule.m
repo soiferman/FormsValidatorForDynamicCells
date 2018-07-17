@@ -6,9 +6,9 @@
 //  Copyright © 2018 Max Soiferman. All rights reserved.
 //
 
-#import "Length.h"
+#import "LengthRule.h"
 
-@implementation Length
+@implementation LengthRule
 
 - (instancetype)initWithMinLength:(NSInteger)minLength {
     self = [super init];

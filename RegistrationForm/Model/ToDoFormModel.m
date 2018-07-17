@@ -7,7 +7,14 @@
 //
 
 #import "ToDoFormModel.h"
+#import "NameRule.h"
 
 @implementation ToDoFormModel
+
+- (void)fillFields {
+
+    [[self addNameFieldWithTitle:@"111" andKey:@"toDoEvent" withMessage:@"message"] addRule:[NameRule new]];
+    
+}
 
 @end

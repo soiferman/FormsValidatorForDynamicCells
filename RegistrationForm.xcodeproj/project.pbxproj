@@ -15,7 +15,7 @@
 		1D9B92B320F3917100AFF65D /* PhoneRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92B220F3917100AFF65D /* PhoneRule.m */; };
 		1D9B92B620F3939600AFF65D /* PasswordRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92B520F3939600AFF65D /* PasswordRule.m */; };
 		1D9B92B920F3974B00AFF65D /* MatchRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92B820F3974B00AFF65D /* MatchRule.m */; };
-		1D9B92BF20F4E44C00AFF65D /* Length.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92BE20F4E44C00AFF65D /* Length.m */; };
+		1D9B92BF20F4E44C00AFF65D /* LengthRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92BE20F4E44C00AFF65D /* LengthRule.m */; };
 		1D9B92C320F5019F00AFF65D /* UserListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92C220F5019F00AFF65D /* UserListTableViewController.m */; };
 		1D9B92C620F50B8700AFF65D /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92C420F50B8700AFF65D /* UserModel.xcdatamodeld */; };
 		1D9B92CE20F5EF2100AFF65D /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92CD20F5EF2100AFF65D /* UserModel.m */; };
@@ -53,8 +53,8 @@
 		1D9B92B520F3939600AFF65D /* PasswordRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordRule.m; sourceTree = "<group>"; };
 		1D9B92B720F3974B00AFF65D /* MatchRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchRule.h; sourceTree = "<group>"; };
 		1D9B92B820F3974B00AFF65D /* MatchRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchRule.m; sourceTree = "<group>"; };
-		1D9B92BD20F4E44C00AFF65D /* Length.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Length.h; sourceTree = "<group>"; };
-		1D9B92BE20F4E44C00AFF65D /* Length.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Length.m; sourceTree = "<group>"; };
+		1D9B92BD20F4E44C00AFF65D /* LengthRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LengthRule.h; sourceTree = "<group>"; };
+		1D9B92BE20F4E44C00AFF65D /* LengthRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LengthRule.m; sourceTree = "<group>"; };
 		1D9B92C120F5019F00AFF65D /* UserListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserListTableViewController.h; sourceTree = "<group>"; };
 		1D9B92C220F5019F00AFF65D /* UserListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserListTableViewController.m; sourceTree = "<group>"; };
 		1D9B92C520F50B8700AFF65D /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
@@ -131,8 +131,8 @@
 				1D9B92B520F3939600AFF65D /* PasswordRule.m */,
 				1D9B92B720F3974B00AFF65D /* MatchRule.h */,
 				1D9B92B820F3974B00AFF65D /* MatchRule.m */,
-				1D9B92BD20F4E44C00AFF65D /* Length.h */,
-				1D9B92BE20F4E44C00AFF65D /* Length.m */,
+				1D9B92BD20F4E44C00AFF65D /* LengthRule.h */,
+				1D9B92BE20F4E44C00AFF65D /* LengthRule.m */,
 			);
 			name = Rule;
 			path = Validator/Rule;
@@ -316,7 +316,7 @@
 				1DEE96F020E4C7C200DA0806 /* main.m in Sources */,
 				1D44B66B20FDF80A00C581C3 /* ToDoFormModel.m in Sources */,
 				1DC3030C20F8CD7D00E7071E /* ToDoModel.m in Sources */,
-				1D9B92BF20F4E44C00AFF65D /* Length.m in Sources */,
+				1D9B92BF20F4E44C00AFF65D /* LengthRule.m in Sources */,
 				1DDDECEC20EE405E007CC735 /* BaseFormModel.m in Sources */,
 				1D9B92B320F3917100AFF65D /* PhoneRule.m in Sources */,
 				1D9B92C620F50B8700AFF65D /* UserModel.xcdatamodeld in Sources */,

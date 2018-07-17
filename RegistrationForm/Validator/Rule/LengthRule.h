@@ -8,7 +8,7 @@
 
 #import "Rule.h"
 
-@interface Length : Rule
+@interface LengthRule : Rule
 
 @property (nonatomic, assign) NSInteger minLength;
 

@@ -12,10 +12,9 @@
 #import "UserDetailViewController.h"
 #import "ToDoModel.h"
 
-#import "FieldsValidator.h"
-#import "NameRule.h"
+#import "ToDoFormModel.h"
 
-@interface UserInfoTableViewController () <UITextFieldDelegate>
+@interface UserInfoTableViewController () <UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) RegistrationFormModel *regModel;
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
@@ -30,8 +29,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImage;
 
-@property (nonatomic, strong) FieldsValidator *validator;
-
 
 @end
 
@@ -44,7 +41,6 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
     [super viewDidLoad];
     self.regModel = [[RegistrationFormModel alloc]init];
     self.toDoArray = [NSArray new];
-    self.validator = [FieldsValidator new];
     [self fillFormFromModel];
     [self configureAvatarImage];
 
@@ -187,27 +183,30 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
         textField.placeholder = @"Place your text here";
         textField.textColor = [UIColor blueColor];
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-      
-        
     }];
     
     //ok alert button
-    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
     
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+
         //Save data to CoreData
         ToDoModel *model;
         model = [NSEntityDescription insertNewObjectForEntityForName:@"Events" inManagedObjectContext:self.managedObjectContext];
         model.toDoEvent = [[alertController textFields]firstObject].text;
         model.owner = self.userModel;
-        
-        
-        
-        
-        [[CoreDataStack sharedManager] saveContext];
 
-        //Updating tableview after adding ToDo event with alert
+        ToDoFormModel *formModel = [ToDoFormModel new];
+        [formModel fillFieldsWithModel:model];
+
+        if (![formModel validate]) {
+           // [action setEnabled:NO];
+            [self.managedObjectContext deleteObject:model];
+        } else {
+            [[CoreDataStack sharedManager] saveContext];
+        }
+
+        //Updating tableview after adding ToDo event
         [self fetchingData];
-        
         [self.tableView reloadData];
     }]];
     
