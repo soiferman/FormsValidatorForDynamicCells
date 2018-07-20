@@ -13,7 +13,7 @@
 
 - (void)fillFields {
 
-    [[self addNameFieldWithTitle:@"111" andKey:@"toDoEvent" withMessage:@"message"] addRule:[NameRule new]];
+    [[self addNameFieldWithTitle:@"toDo" andKey:@"toDoEvent" withMessage:@"message"] addRule:[NameRule new]];
     
 }
 

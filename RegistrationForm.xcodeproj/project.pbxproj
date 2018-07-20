@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D34054E20ECE31700D62CE5 /* RegistrationFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D34054D20ECE31700D62CE5 /* RegistrationFormModel.m */; };
 		1D44B66B20FDF80A00C581C3 /* ToDoFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44B66A20FDF80A00C581C3 /* ToDoFormModel.m */; };
+		1D44B66E20FE319F00C581C3 /* ToDoAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44B66D20FE319F00C581C3 /* ToDoAlertController.m */; };
 		1D9B92AA20F3507E00AFF65D /* Rule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92A920F3507E00AFF65D /* Rule.m */; };
 		1D9B92AD20F3565C00AFF65D /* NameRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92AC20F3565C00AFF65D /* NameRule.m */; };
 		1D9B92B020F38F3400AFF65D /* EmailRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92AF20F38F3400AFF65D /* EmailRule.m */; };
@@ -41,6 +42,8 @@
 		1D34054D20ECE31700D62CE5 /* RegistrationFormModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistrationFormModel.m; sourceTree = "<group>"; };
 		1D44B66920FDF80A00C581C3 /* ToDoFormModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoFormModel.h; sourceTree = "<group>"; };
 		1D44B66A20FDF80A00C581C3 /* ToDoFormModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoFormModel.m; sourceTree = "<group>"; };
+		1D44B66C20FE319F00C581C3 /* ToDoAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoAlertController.h; sourceTree = "<group>"; };
+		1D44B66D20FE319F00C581C3 /* ToDoAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoAlertController.m; sourceTree = "<group>"; };
 		1D9B92A820F3507E00AFF65D /* Rule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rule.h; sourceTree = "<group>"; };
 		1D9B92A920F3507E00AFF65D /* Rule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rule.m; sourceTree = "<group>"; };
 		1D9B92AB20F3565C00AFF65D /* NameRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NameRule.h; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 			children = (
 				1DEA900C20F7899A00068833 /* UserInfoTableViewController.h */,
 				1DEA900D20F7899A00068833 /* UserInfoTableViewController.m */,
+				1D44B66C20FE319F00C581C3 /* ToDoAlertController.h */,
+				1D44B66D20FE319F00C581C3 /* ToDoAlertController.m */,
 			);
 			path = UserInfo;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				1DDDECE920EE1F0B007CC735 /* FieldFormModel.m in Sources */,
 				1D9B92C320F5019F00AFF65D /* UserListTableViewController.m in Sources */,
 				1DEA900E20F7899A00068833 /* UserInfoTableViewController.m in Sources */,
+				1D44B66E20FE319F00C581C3 /* ToDoAlertController.m in Sources */,
 				1D9B92CE20F5EF2100AFF65D /* UserModel.m in Sources */,
 				1DEA900A20F755A600068833 /* BaseManagedObject.m in Sources */,
 				1DEA900720F63D8B00068833 /* CoreDataStack.m in Sources */,

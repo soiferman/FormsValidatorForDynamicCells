@@ -11,10 +11,11 @@
 #import "CoreDataStack.h"
 #import "UserDetailViewController.h"
 #import "ToDoModel.h"
-
 #import "ToDoFormModel.h"
+#import "ToDoAlertController.h"
 
-@interface UserInfoTableViewController () <UITextFieldDelegate, UIAlertViewDelegate>
+
+@interface UserInfoTableViewController () <ToDoAlertControllerDelegate>
 
 @property (nonatomic, strong) RegistrationFormModel *regModel;
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
@@ -29,6 +30,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImage;
 
+@property (nonatomic, strong) ToDoAlertController *toDoAlertController;
+
 
 @end
 
@@ -41,21 +44,15 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
     [super viewDidLoad];
     self.regModel = [[RegistrationFormModel alloc]init];
     self.toDoArray = [NSArray new];
+    self.toDoAlertController = [[ToDoAlertController alloc]initWithController:self];
+    self.toDoAlertController.delegate = self;
     [self fillFormFromModel];
     [self configureAvatarImage];
-
 
     [self fetchingData];
 
     NSArray *keysArray = @[@"phone", @"email", @"position"];
     self.userFieldsArray = [self.regModel fieldsWithKeys:keysArray];
-    
-}
-
-- (void)fetchingData {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Events"];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"owner == %@", self.userModel];
-    self.toDoArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
     
 }
 
@@ -71,6 +68,13 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
 
 - (NSManagedObjectContext *)managedObjectContext {
     return [[CoreDataStack sharedManager] managedObjectContext];
+}
+
+- (void)fetchingData {
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Events"];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"owner == %@", self.userModel];
+    self.toDoArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    
 }
 
 #pragma mark - FillModel
@@ -133,18 +137,18 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section ==0) {
+    if (section == 0) {
         return self.userInfoHeaderView.frame.size.height;
     }
     return self.toDoHeaderView.frame.size.height;
 }
 
 
--(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     //Edit action
     UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
-        [self editToDoAlertWithIndexPath:indexPath];
+        [self.toDoAlertController editToDoWithModel:self.toDoArray[indexPath.row]];
     }];
     editAction.backgroundColor = [UIColor blueColor];
 
@@ -164,6 +168,15 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
     return @[deleteAction,editAction];
 }
 
+#pragma mark - ToDoAlertControllerDelegate
+
+- (void)toDoAlertControllerDidSaveSuccess:(ToDoAlertController *)alertController withModel:(ToDoModel *)model {
+    model.owner = self.userModel;
+    [[CoreDataStack sharedManager] saveContext];
+    [self fetchingData];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -174,84 +187,11 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
     }
 }
 
-#pragma mark - Alert
-
-- (void)addToDoNote {
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle: @"ToDo" message: @"Enter your note:" preferredStyle:UIAlertControllerStyleAlert];
-    //Add ToDo Event
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"Place your text here";
-        textField.textColor = [UIColor blueColor];
-        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    }];
-    
-    //ok alert button
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-
-        //Save data to CoreData
-        ToDoModel *model;
-        model = [NSEntityDescription insertNewObjectForEntityForName:@"Events" inManagedObjectContext:self.managedObjectContext];
-        model.toDoEvent = [[alertController textFields]firstObject].text;
-        model.owner = self.userModel;
-
-        ToDoFormModel *formModel = [ToDoFormModel new];
-        [formModel fillFieldsWithModel:model];
-
-        if (![formModel validate]) {
-           // [action setEnabled:NO];
-            [self.managedObjectContext deleteObject:model];
-        } else {
-            [[CoreDataStack sharedManager] saveContext];
-        }
-
-        //Updating tableview after adding ToDo event
-        [self fetchingData];
-        [self.tableView reloadData];
-    }]];
-    
-    //Cancel button
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        
-    }]];
-    
-    [self presentViewController:alertController animated:YES completion:nil];
-}
-
-- (void)editToDoAlertWithIndexPath:(NSIndexPath *)indexPath {
-   
-    //Alert with edit message
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Edit ToDo" message: @"here text" preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"Place your text here";
-        textField.textColor = [UIColor blueColor];
-        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-        textField.text = self.toDoArray[indexPath.row].toDoEvent; //fill alert with data information
-    }];
-    
-    //Confirm button
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-
-        ToDoModel *model;
-        model = self.toDoArray[indexPath.row];
-        model.toDoEvent = [[alertController textFields]firstObject].text;
-        [[CoreDataStack sharedManager] saveContext];
-        
-        [self.tableView reloadData];
-    }]];
-    
-    //Cancel button
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        
-    }]];
-     
-     [self presentViewController:alertController animated:YES completion:nil];
-}
 
 #pragma mark - Actions
 
 - (IBAction)addToDoAction:(id)sender {
-    [self addToDoNote];
+    [self.toDoAlertController addToDoNote];
 }
 
 @end
