@@ -55,6 +55,15 @@
     return NO;
 }
 
+//- (NSArray *)searchRulesWithModel:(id)model {
+//    NSMutableArray * array = [[NSMutableArray alloc]init];
+//    for (Rule *rule in self.rules) {
+//        [array addObject:rule];
+//    }
+//    NSLog(@"searchRulesWithModel - %@", array);
+//    return array;
+//}
+
 
 - (void)addRule:(Rule *)rule {
     [self.rules addObject:rule];

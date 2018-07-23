@@ -16,7 +16,7 @@
 
 - (BOOL)validatePhone:(NSString *)phoneNumber
 {
-    NSString *phoneRegex = @"^.{6,50}$";
+    NSString *phoneRegex = @"^\\d{6,50}$";
     NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", phoneRegex];
     return [phoneTest evaluateWithObject:phoneNumber];
 }

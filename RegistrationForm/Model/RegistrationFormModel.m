@@ -29,12 +29,10 @@
     [[self addEmailFieldWithTitle:@"Email" andKey:@"email" required:YES withMessage:@"Введите правильный email адрес"] addRule:[EmailRule new]];
     [[self addPhoneFieldWithTitle:@"Phone number" andKey:@"phone" required:NO withMessage:@"Введите корректный номер телефона"] addRule:[PhoneRule new]];
 
-    [[self addPasswordFieldWithTitle:@"Password" andKey:@"password" withMessage:@"Пароль должен содеожать минимум 6 символов"]addRule:[PasswordRule new]];
+    [[self addPasswordFieldWithTitle:@"Password" andKey:@"password" withMessage:@"Пароль должен содержать минимум 6 символов"]addRule:[PasswordRule new]];
     [[self addPasswordFieldWithTitle:@"Confirm Password" andKey:@"confirmPassword" withMessage:@"Введенные пароли не совпадают"]addRule:[self matchRule]];
     
 }
-
-
 
 - (id)matchRule {
     MatchRule *rule = [MatchRule new];
@@ -45,8 +43,8 @@
 
 - (void)fillFieldsWithModel:(id)model
 {
-    [super fillFieldsWithModel:model];
     [self fieldWithKey:@"confirmPassword"].value = [model valueForKey:@"password"];
+    [super fillFieldsWithModel:model];
 }
 
 @end

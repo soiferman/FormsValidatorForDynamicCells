@@ -39,4 +39,6 @@
 - (BOOL)checkInvalidField:(FieldFormModel *)model;
 - (BOOL)validate;
 
+- (NSString *)invalidMessageWithField:(FieldFormModel *)fieldModel;
+
 @end

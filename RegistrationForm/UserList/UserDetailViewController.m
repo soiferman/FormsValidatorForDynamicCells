@@ -17,7 +17,7 @@
 @property (nonatomic, strong) RegistrationFormModel *regModel;
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 
-@property (nonatomic, strong) UITextField *textField;
+
 
 @end
 
@@ -31,6 +31,25 @@ static NSString *cellIdentifier = @"CellIdentifier";
     [self fillFormFromModel];
 }
 
+- (void)updateTableViewCellState:(UITextField *)textField {
+    FieldFormModel *fieldModel = [[self rowsArray]objectAtIndex:textField.tag];
+    textField.text = fieldModel.value;
+    
+    UILabel *label = [textField.superview.subviews objectAtIndex:1];
+    
+    if (fieldModel.userHasChanged == NO) {
+        textField.layer.borderWidth = 0.f;
+    } else if (fieldModel.isValid) {
+        textField.layer.borderWidth = 1.0f;
+        textField.layer.borderColor = [UIColor greenColor].CGColor;
+        label.text = nil;
+    } else {
+        textField.layer.borderWidth = 1.0f;
+        textField.layer.borderColor = [UIColor redColor].CGColor;
+        label.text = fieldModel.message;
+    }
+    
+}
 
 #pragma mark - CoreData
 
@@ -61,15 +80,20 @@ static NSString *cellIdentifier = @"CellIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     //UITextField *textField = [(TableViewCell *)cell cellTextField];
-    self.textField = [(TableViewCell *)cell cellTextField];
+    UITextField *textField = [(TableViewCell *)cell cellTextField];
+   
+   // self.errorLabel.text = self.rowsArray[indexPath.row].message;
     
-    self.textField.textColor = [UIColor blueColor];
-    self.textField.placeholder = self.rowsArray[indexPath.row].title;
-    self.textField.text = self.rowsArray[indexPath.row].value;
-    self.textField.keyboardType = self.rowsArray[indexPath.row].keyboardType;
-    self.textField.secureTextEntry = self.rowsArray[indexPath.row].secureTextEntry;
-    self.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    [self.textField setTag:indexPath.row];
+    textField.textColor = [UIColor blueColor];
+    textField.placeholder = self.rowsArray[indexPath.row].title;
+    textField.text = self.rowsArray[indexPath.row].value;
+    textField.keyboardType = self.rowsArray[indexPath.row].keyboardType;
+    textField.secureTextEntry = self.rowsArray[indexPath.row].secureTextEntry;
+    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    
+    [textField setTag:indexPath.row];
+    
+    [self updateTableViewCellState:textField];
     
     return cell;
 
@@ -112,7 +136,9 @@ static NSString *cellIdentifier = @"CellIdentifier";
     [self.view endEditing:YES];
     
     if (![self.regModel validate]) {
-        [self alertWithMessage:[self.regModel.validator invalidMessage]];
+        [self alertWithMessage:@"Заполните все подсвеченные поля"];
+       // [self alertWithMessage:[self.regModel.validator invalidMessage]];
+        
     } else {
         [self saveUserModel];
     }
@@ -123,17 +149,13 @@ static NSString *cellIdentifier = @"CellIdentifier";
 - (IBAction)textFieldChanged:(id)sender {
     
     UITextField *textField = (UITextField *)sender;
+    
     FieldFormModel *fieldModel = [[self rowsArray]objectAtIndex:textField.tag];
     fieldModel.value = textField.text;
+    fieldModel.userHasChanged = YES;
     [self.regModel validate];
     
-    if ([self.regModel checkInvalidField:fieldModel]) {
-            textField.layer.borderWidth = 1.0f;
-            textField.layer.borderColor = [UIColor redColor].CGColor;
-        }else {
-            textField.layer.borderWidth = 1.0f;
-            textField.layer.borderColor = [UIColor greenColor].CGColor;
-        }
+    [self updateTableViewCellState:textField];
 
    // NSLog(@"%@", self.regModel.rowsArray);
 }

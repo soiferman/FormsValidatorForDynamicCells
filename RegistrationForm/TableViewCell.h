@@ -11,6 +11,7 @@
 @interface TableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UITextField *cellTextField;
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
 
 @end

@@ -15,6 +15,7 @@
 - (void)addRule:(Rule *)rule;
 - (NSString *)invalidMessage;
 - (BOOL)hasInvalidRulesWithModel:(id)model;
+//- (NSArray *)searchRulesWithModel:(id)model;
 
 
 @end

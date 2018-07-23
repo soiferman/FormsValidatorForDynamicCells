@@ -15,7 +15,6 @@
 @interface FieldFormModel : NSObject
 
 @property (nonatomic, strong) FieldsValidator *validator;
-
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *key;
 @property (nonatomic, assign) BOOL isRequired;
@@ -23,6 +22,8 @@
 @property (nonatomic) UIKeyboardType keyboardType;
 @property (nonatomic) BOOL secureTextEntry;
 @property (nonatomic, strong) NSString *message;
+@property (nonatomic, assign) BOOL isValid;
+@property (nonatomic, assign) BOOL userHasChanged;
 
 - (void)addRule:(Rule *)rule;
 

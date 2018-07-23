@@ -45,8 +45,8 @@
     for (FieldFormModel *field in self.rowsArray) {
         if ([self propertyExistWithModel:model property:field.key])
             field.value = [model valueForKey:field.key];
-
     }
+    [self validate];
 }
 
 - (BOOL)propertyExistWithModel:(id)model property:(NSString *)property {
@@ -83,7 +83,7 @@
 }
 
 - (FieldFormModel *)addFieldWithTitle:(NSString *)title andKey:(NSString *)key required:(BOOL)required keyboardType:(UIKeyboardType)keyboardType withMessage:(NSString *)message {
-   return [self addFieldWithTitle:title andKey:key required:required withMessage:message keyboardType:UIKeyboardTypeDefault secureTextEntry:NO];
+   return [self addFieldWithTitle:title andKey:key required:required withMessage:message keyboardType:keyboardType secureTextEntry:NO];
 }
 
 - (FieldFormModel *)addPhoneFieldWithTitle:(NSString *)title andKey:(NSString *)key required:(BOOL)required withMessage:(NSString *)message {
@@ -140,11 +140,25 @@
     for (FieldFormModel *field in self.rowsArray) {
         if ([self.validator hasInvalidRulesWithModel:field]) {
             [self.invalidFields addObject:field];
+            field.isValid = false;
+        } else {
+            field.isValid = true;
         }
     }
     
     return result;
 }
+
+//- (NSString *)invalidMessageWithField:(FieldFormModel *)fieldModel {
+//    
+//    for (FieldFormModel *model in self.invalidFields) {
+//        NSLog(@"invalidMessageWithField - %@", model);
+//            [self.validator searchRulesWithModel:model];
+//    }
+//    NSLog(@"message - %@", fieldModel.message);
+//    return fieldModel.message;
+//    
+//}
 
 //- (void)addRule:(Rule *)rule {
 //    [self.validator addRule:rule];
