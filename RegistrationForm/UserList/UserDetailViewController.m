@@ -12,10 +12,12 @@
 #import "TableViewCell.h"
 #import "CoreDataStack.h"
 
-@interface UserDetailViewController ()
+@interface UserDetailViewController () 
 
 @property (nonatomic, strong) RegistrationFormModel *regModel;
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+
+@property (nonatomic, strong) UITextField *textField;
 
 @end
 
@@ -58,15 +60,17 @@ static NSString *cellIdentifier = @"CellIdentifier";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    UITextField *textField = [(TableViewCell *)cell cellTextField];
+    //UITextField *textField = [(TableViewCell *)cell cellTextField];
+    self.textField = [(TableViewCell *)cell cellTextField];
     
-    textField.textColor = [UIColor blueColor];
-    textField.placeholder = self.rowsArray[indexPath.row].title;
-    textField.text = self.rowsArray[indexPath.row].value;
-    textField.keyboardType = self.rowsArray[indexPath.row].keyboardType;
-    textField.secureTextEntry = self.rowsArray[indexPath.row].secureTextEntry;
-    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    [textField setTag:indexPath.row];
+    self.textField.textColor = [UIColor blueColor];
+    self.textField.placeholder = self.rowsArray[indexPath.row].title;
+    self.textField.text = self.rowsArray[indexPath.row].value;
+    self.textField.keyboardType = self.rowsArray[indexPath.row].keyboardType;
+    self.textField.secureTextEntry = self.rowsArray[indexPath.row].secureTextEntry;
+    self.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    [self.textField setTag:indexPath.row];
+    
     return cell;
 
 }
@@ -112,13 +116,24 @@ static NSString *cellIdentifier = @"CellIdentifier";
     } else {
         [self saveUserModel];
     }
-     [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 
 - (IBAction)textFieldChanged:(id)sender {
+    
     UITextField *textField = (UITextField *)sender;
-    [[self rowsArray]objectAtIndex:textField.tag].value = textField.text;
+    FieldFormModel *fieldModel = [[self rowsArray]objectAtIndex:textField.tag];
+    fieldModel.value = textField.text;
+    [self.regModel validate];
+    
+    if ([self.regModel checkInvalidField:fieldModel]) {
+            textField.layer.borderWidth = 1.0f;
+            textField.layer.borderColor = [UIColor redColor].CGColor;
+        }else {
+            textField.layer.borderWidth = 1.0f;
+            textField.layer.borderColor = [UIColor greenColor].CGColor;
+        }
 
    // NSLog(@"%@", self.regModel.rowsArray);
 }

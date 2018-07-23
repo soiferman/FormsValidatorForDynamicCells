@@ -10,6 +10,12 @@
 #import "NameRule.h"
 #import "UserModel.h"
 
+@interface BaseFormModel ()
+
+@property (nonatomic, strong) NSMutableArray *invalidFields;
+
+@end
+
 
 @implementation BaseFormModel
 
@@ -18,6 +24,7 @@
     if (self) {
         self.validator = [[FieldsValidator alloc]init];
         self.rowsArray = [[NSMutableArray alloc]init];
+        self.invalidFields = [[NSMutableArray alloc]init];
         [self fillFields];
     }
     return self;
@@ -121,8 +128,22 @@
     return nil;*/
 }
 
+- (BOOL)checkInvalidField:(FieldFormModel *)model {
+    return [self.invalidFields containsObject:model];
+}
+
 - (BOOL)validate {
-   return [self.validator validate];
+    
+    [self.invalidFields removeAllObjects];
+    BOOL result = [self.validator validate];
+    
+    for (FieldFormModel *field in self.rowsArray) {
+        if ([self.validator hasInvalidRulesWithModel:field]) {
+            [self.invalidFields addObject:field];
+        }
+    }
+    
+    return result;
 }
 
 //- (void)addRule:(Rule *)rule {

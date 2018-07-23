@@ -46,6 +46,15 @@
     return YES;
 }
 
+- (BOOL)hasInvalidRulesWithModel:(id)model {
+    for (Rule *rule in self.invalidRules) {
+        if (rule.model == model) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 
 - (void)addRule:(Rule *)rule {
     [self.rules addObject:rule];

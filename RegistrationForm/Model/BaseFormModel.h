@@ -36,7 +36,7 @@
 - (void)fillModel:(id)model;
 - (void)fillFieldsWithModel:(id)model;
 
-
+- (BOOL)checkInvalidField:(FieldFormModel *)model;
 - (BOOL)validate;
 
 @end

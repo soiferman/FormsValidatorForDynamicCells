@@ -14,6 +14,8 @@
 - (BOOL)validate;
 - (void)addRule:(Rule *)rule;
 - (NSString *)invalidMessage;
+- (BOOL)hasInvalidRulesWithModel:(id)model;
+
 
 @end
 
