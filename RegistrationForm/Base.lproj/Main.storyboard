@@ -228,7 +228,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="textField:" destination="1Ch-Fa-Nul" eventType="editingDidEnd" id="Bw7-hO-5dn"/>
-                                                        <action selector="textFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="QU2-NQ-E7m"/>
+                                                        <action selector="textFieldChanged:" destination="wpV-8Q-c7r" eventType="editingChanged" id="4Hd-hs-oOF"/>
                                                         <outlet property="delegate" destination="BYZ-38-t0r" id="Eaj-Gm-wex"/>
                                                     </connections>
                                                 </textField>

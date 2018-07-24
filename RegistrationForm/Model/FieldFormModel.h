@@ -22,6 +22,7 @@
 @property (nonatomic) UIKeyboardType keyboardType;
 @property (nonatomic) BOOL secureTextEntry;
 @property (nonatomic, strong) NSString *message;
+
 @property (nonatomic, assign) BOOL isValid;
 @property (nonatomic, assign) BOOL userHasChanged;
 

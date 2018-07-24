@@ -12,16 +12,15 @@
 #import "TableViewCell.h"
 #import "CoreDataStack.h"
 
-@interface UserDetailViewController () 
+@interface UserDetailViewController ()
 
 @property (nonatomic, strong) RegistrationFormModel *regModel;
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 
-
-
 @end
 
 static NSString *cellIdentifier = @"CellIdentifier";
+static NSString *cellIdentifierButton = @"CellIdentifierButton";
 
 @implementation UserDetailViewController
 
@@ -29,27 +28,27 @@ static NSString *cellIdentifier = @"CellIdentifier";
     [super viewDidLoad];
     self.regModel = [[RegistrationFormModel alloc]init];
     [self fillFormFromModel];
+
 }
 
-- (void)updateTableViewCellState:(UITextField *)textField {
-    FieldFormModel *fieldModel = [[self rowsArray]objectAtIndex:textField.tag];
-    textField.text = fieldModel.value;
-    
-    UILabel *label = [textField.superview.subviews objectAtIndex:1];
-    
-    if (fieldModel.userHasChanged == NO) {
-        textField.layer.borderWidth = 0.f;
-    } else if (fieldModel.isValid) {
-        textField.layer.borderWidth = 1.0f;
-        textField.layer.borderColor = [UIColor greenColor].CGColor;
-        label.text = nil;
-    } else {
-        textField.layer.borderWidth = 1.0f;
-        textField.layer.borderColor = [UIColor redColor].CGColor;
-        label.text = fieldModel.message;
-    }
-    
-}
+//- (void)updateTableViewCellState:(UITextField *)textField {
+//    FieldFormModel *fieldModel = [[self rowsArray]objectAtIndex:textField.tag];
+//    textField.text = fieldModel.value;
+//
+//    UILabel *label = [textField.superview.subviews objectAtIndex:1];
+//
+//    if (fieldModel.userHasChanged == NO) {
+//        textField.layer.borderWidth = 0.f;
+//    } else if (fieldModel.isValid) {
+//        textField.layer.borderWidth = 1.0f;
+//        textField.layer.borderColor = [UIColor greenColor].CGColor;
+//        label.text = nil;
+//    } else {
+//        textField.layer.borderWidth = 1.0f;
+//        textField.layer.borderColor = [UIColor redColor].CGColor;
+//        label.text = fieldModel.message;
+//    }
+//}
 
 #pragma mark - CoreData
 
@@ -73,27 +72,15 @@ static NSString *cellIdentifier = @"CellIdentifier";
     NSInteger totalRow = [tableView numberOfRowsInSection:indexPath.section];
     if (indexPath.row == totalRow - 1) {
 
-        UITableViewCell *cellButton = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifierButton" forIndexPath:indexPath];
+        UITableViewCell *cellButton = [tableView dequeueReusableCellWithIdentifier:cellIdentifierButton forIndexPath:indexPath];
         return cellButton;
     }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    //UITextField *textField = [(TableViewCell *)cell cellTextField];
-    UITextField *textField = [(TableViewCell *)cell cellTextField];
-   
-   // self.errorLabel.text = self.rowsArray[indexPath.row].message;
-    
-    textField.textColor = [UIColor blueColor];
-    textField.placeholder = self.rowsArray[indexPath.row].title;
-    textField.text = self.rowsArray[indexPath.row].value;
-    textField.keyboardType = self.rowsArray[indexPath.row].keyboardType;
-    textField.secureTextEntry = self.rowsArray[indexPath.row].secureTextEntry;
-    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    
-    [textField setTag:indexPath.row];
-    
-    [self updateTableViewCellState:textField];
+    TableViewCell *fieldCell = (TableViewCell *)cell;
+    fieldCell.fieldModel = self.rowsArray[indexPath.row];
+    fieldCell.formModel = self.regModel;
     
     return cell;
 
@@ -130,6 +117,7 @@ static NSString *cellIdentifier = @"CellIdentifier";
     [[CoreDataStack sharedManager] saveContext];
 }
 
+
 #pragma mark - Actions
 
 - (IBAction)saveButton:(id)sender {
@@ -144,22 +132,6 @@ static NSString *cellIdentifier = @"CellIdentifier";
     }
         [self.navigationController popToRootViewControllerAnimated:YES];
 }
-
-
-- (IBAction)textFieldChanged:(id)sender {
-    
-    UITextField *textField = (UITextField *)sender;
-    
-    FieldFormModel *fieldModel = [[self rowsArray]objectAtIndex:textField.tag];
-    fieldModel.value = textField.text;
-    fieldModel.userHasChanged = YES;
-    [self.regModel validate];
-    
-    [self updateTableViewCellState:textField];
-
-   // NSLog(@"%@", self.regModel.rowsArray);
-}
-
 
 
 @end
