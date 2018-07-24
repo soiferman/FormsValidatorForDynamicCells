@@ -31,25 +31,6 @@ static NSString *cellIdentifierButton = @"CellIdentifierButton";
 
 }
 
-//- (void)updateTableViewCellState:(UITextField *)textField {
-//    FieldFormModel *fieldModel = [[self rowsArray]objectAtIndex:textField.tag];
-//    textField.text = fieldModel.value;
-//
-//    UILabel *label = [textField.superview.subviews objectAtIndex:1];
-//
-//    if (fieldModel.userHasChanged == NO) {
-//        textField.layer.borderWidth = 0.f;
-//    } else if (fieldModel.isValid) {
-//        textField.layer.borderWidth = 1.0f;
-//        textField.layer.borderColor = [UIColor greenColor].CGColor;
-//        label.text = nil;
-//    } else {
-//        textField.layer.borderWidth = 1.0f;
-//        textField.layer.borderColor = [UIColor redColor].CGColor;
-//        label.text = fieldModel.message;
-//    }
-//}
-
 #pragma mark - CoreData
 
 - (NSManagedObjectContext *)managedObjectContext {

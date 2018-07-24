@@ -7,7 +7,8 @@
 //
 
 #import "Rule.h"
+#import "LengthRule.h"
 
-@interface NameRule : Rule
+@interface NameRule : LengthRule
 
 @end

@@ -10,6 +10,17 @@
 
 @implementation Rule
 
+- (instancetype)initWithModel:(id)model withProperty:(NSString *)propertyName message:(NSString *)message required:(BOOL)isRequired {
+    self = [super init];
+    if (self) {
+        self.model = model;
+        self.propertyName = propertyName;
+        self.message = message;
+        self.required = isRequired;
+    }
+    return self;
+}
+
 - (BOOL)validate {
     return NO;
 }

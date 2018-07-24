@@ -10,13 +10,13 @@
 		1D34054E20ECE31700D62CE5 /* RegistrationFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D34054D20ECE31700D62CE5 /* RegistrationFormModel.m */; };
 		1D44B66B20FDF80A00C581C3 /* ToDoFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44B66A20FDF80A00C581C3 /* ToDoFormModel.m */; };
 		1D44B66E20FE319F00C581C3 /* ToDoAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44B66D20FE319F00C581C3 /* ToDoAlertController.m */; };
-		1D9B92AA20F3507E00AFF65D /* Rule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92A920F3507E00AFF65D /* Rule.m */; };
-		1D9B92AD20F3565C00AFF65D /* NameRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92AC20F3565C00AFF65D /* NameRule.m */; };
-		1D9B92B020F38F3400AFF65D /* EmailRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92AF20F38F3400AFF65D /* EmailRule.m */; };
-		1D9B92B320F3917100AFF65D /* PhoneRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92B220F3917100AFF65D /* PhoneRule.m */; };
-		1D9B92B620F3939600AFF65D /* PasswordRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92B520F3939600AFF65D /* PasswordRule.m */; };
-		1D9B92B920F3974B00AFF65D /* MatchRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92B820F3974B00AFF65D /* MatchRule.m */; };
-		1D9B92BF20F4E44C00AFF65D /* LengthRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92BE20F4E44C00AFF65D /* LengthRule.m */; };
+		1D643FB5210735EE00F028B8 /* Rule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D643FA7210735EE00F028B8 /* Rule.m */; };
+		1D643FB6210735EE00F028B8 /* MatchRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D643FA8210735EE00F028B8 /* MatchRule.m */; };
+		1D643FB7210735EE00F028B8 /* LengthRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D643FAD210735EE00F028B8 /* LengthRule.m */; };
+		1D643FB8210735EE00F028B8 /* NameRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D643FB0210735EE00F028B8 /* NameRule.m */; };
+		1D643FB9210735EE00F028B8 /* EmailRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D643FB1210735EE00F028B8 /* EmailRule.m */; };
+		1D643FBA210735EE00F028B8 /* PhoneRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D643FB2210735EE00F028B8 /* PhoneRule.m */; };
+		1D643FBB210735EE00F028B8 /* PasswordRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D643FB3210735EE00F028B8 /* PasswordRule.m */; };
 		1D9B92C320F5019F00AFF65D /* UserListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92C220F5019F00AFF65D /* UserListTableViewController.m */; };
 		1D9B92C620F50B8700AFF65D /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92C420F50B8700AFF65D /* UserModel.xcdatamodeld */; };
 		1D9B92CE20F5EF2100AFF65D /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92CD20F5EF2100AFF65D /* UserModel.m */; };
@@ -44,20 +44,20 @@
 		1D44B66A20FDF80A00C581C3 /* ToDoFormModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoFormModel.m; sourceTree = "<group>"; };
 		1D44B66C20FE319F00C581C3 /* ToDoAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoAlertController.h; sourceTree = "<group>"; };
 		1D44B66D20FE319F00C581C3 /* ToDoAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoAlertController.m; sourceTree = "<group>"; };
-		1D9B92A820F3507E00AFF65D /* Rule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rule.h; sourceTree = "<group>"; };
-		1D9B92A920F3507E00AFF65D /* Rule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rule.m; sourceTree = "<group>"; };
-		1D9B92AB20F3565C00AFF65D /* NameRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NameRule.h; sourceTree = "<group>"; };
-		1D9B92AC20F3565C00AFF65D /* NameRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NameRule.m; sourceTree = "<group>"; };
-		1D9B92AE20F38F3400AFF65D /* EmailRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmailRule.h; sourceTree = "<group>"; };
-		1D9B92AF20F38F3400AFF65D /* EmailRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailRule.m; sourceTree = "<group>"; };
-		1D9B92B120F3917100AFF65D /* PhoneRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneRule.h; sourceTree = "<group>"; };
-		1D9B92B220F3917100AFF65D /* PhoneRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneRule.m; sourceTree = "<group>"; };
-		1D9B92B420F3939600AFF65D /* PasswordRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordRule.h; sourceTree = "<group>"; };
-		1D9B92B520F3939600AFF65D /* PasswordRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordRule.m; sourceTree = "<group>"; };
-		1D9B92B720F3974B00AFF65D /* MatchRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchRule.h; sourceTree = "<group>"; };
-		1D9B92B820F3974B00AFF65D /* MatchRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchRule.m; sourceTree = "<group>"; };
-		1D9B92BD20F4E44C00AFF65D /* LengthRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LengthRule.h; sourceTree = "<group>"; };
-		1D9B92BE20F4E44C00AFF65D /* LengthRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LengthRule.m; sourceTree = "<group>"; };
+		1D643FA7210735EE00F028B8 /* Rule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rule.m; sourceTree = "<group>"; };
+		1D643FA8210735EE00F028B8 /* MatchRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchRule.m; sourceTree = "<group>"; };
+		1D643FA9210735EE00F028B8 /* PasswordRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordRule.h; sourceTree = "<group>"; };
+		1D643FAA210735EE00F028B8 /* PhoneRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneRule.h; sourceTree = "<group>"; };
+		1D643FAB210735EE00F028B8 /* EmailRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailRule.h; sourceTree = "<group>"; };
+		1D643FAC210735EE00F028B8 /* NameRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameRule.h; sourceTree = "<group>"; };
+		1D643FAD210735EE00F028B8 /* LengthRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LengthRule.m; sourceTree = "<group>"; };
+		1D643FAE210735EE00F028B8 /* MatchRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchRule.h; sourceTree = "<group>"; };
+		1D643FAF210735EE00F028B8 /* Rule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rule.h; sourceTree = "<group>"; };
+		1D643FB0210735EE00F028B8 /* NameRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameRule.m; sourceTree = "<group>"; };
+		1D643FB1210735EE00F028B8 /* EmailRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailRule.m; sourceTree = "<group>"; };
+		1D643FB2210735EE00F028B8 /* PhoneRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneRule.m; sourceTree = "<group>"; };
+		1D643FB3210735EE00F028B8 /* PasswordRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordRule.m; sourceTree = "<group>"; };
+		1D643FB4210735EE00F028B8 /* LengthRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LengthRule.h; sourceTree = "<group>"; };
 		1D9B92C120F5019F00AFF65D /* UserListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserListTableViewController.h; sourceTree = "<group>"; };
 		1D9B92C220F5019F00AFF65D /* UserListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserListTableViewController.m; sourceTree = "<group>"; };
 		1D9B92C520F50B8700AFF65D /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
@@ -107,38 +107,53 @@
 		1D34054F20ECE31D00D62CE5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1DDDECEA20EE405E007CC735 /* BaseFormModel.h */,
-				1DDDECEB20EE405E007CC735 /* BaseFormModel.m */,
 				1D34054C20ECE31700D62CE5 /* RegistrationFormModel.h */,
 				1D34054D20ECE31700D62CE5 /* RegistrationFormModel.m */,
-				1DDDECE720EE1F0B007CC735 /* FieldFormModel.h */,
-				1DDDECE820EE1F0B007CC735 /* FieldFormModel.m */,
 				1D44B66920FDF80A00C581C3 /* ToDoFormModel.h */,
 				1D44B66A20FDF80A00C581C3 /* ToDoFormModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		1D9B92A720F3503E00AFF65D /* Rule */ = {
+		1D643F902107355400F028B8 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				1D9B92A820F3507E00AFF65D /* Rule.h */,
-				1D9B92A920F3507E00AFF65D /* Rule.m */,
-				1D9B92AB20F3565C00AFF65D /* NameRule.h */,
-				1D9B92AC20F3565C00AFF65D /* NameRule.m */,
-				1D9B92AE20F38F3400AFF65D /* EmailRule.h */,
-				1D9B92AF20F38F3400AFF65D /* EmailRule.m */,
-				1D9B92B120F3917100AFF65D /* PhoneRule.h */,
-				1D9B92B220F3917100AFF65D /* PhoneRule.m */,
-				1D9B92B420F3939600AFF65D /* PasswordRule.h */,
-				1D9B92B520F3939600AFF65D /* PasswordRule.m */,
-				1D9B92B720F3974B00AFF65D /* MatchRule.h */,
-				1D9B92B820F3974B00AFF65D /* MatchRule.m */,
-				1D9B92BD20F4E44C00AFF65D /* LengthRule.h */,
-				1D9B92BE20F4E44C00AFF65D /* LengthRule.m */,
+				1D643FBC2107365800F028B8 /* Form */,
+				1DDDECED20EE487B007CC735 /* Validator */,
 			);
-			name = Rule;
-			path = Validator/Rule;
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		1D643FA6210735EE00F028B8 /* Rule */ = {
+			isa = PBXGroup;
+			children = (
+				1D643FAF210735EE00F028B8 /* Rule.h */,
+				1D643FA7210735EE00F028B8 /* Rule.m */,
+				1D643FAC210735EE00F028B8 /* NameRule.h */,
+				1D643FB0210735EE00F028B8 /* NameRule.m */,
+				1D643FAA210735EE00F028B8 /* PhoneRule.h */,
+				1D643FB2210735EE00F028B8 /* PhoneRule.m */,
+				1D643FAB210735EE00F028B8 /* EmailRule.h */,
+				1D643FB1210735EE00F028B8 /* EmailRule.m */,
+				1D643FA9210735EE00F028B8 /* PasswordRule.h */,
+				1D643FB3210735EE00F028B8 /* PasswordRule.m */,
+				1D643FAE210735EE00F028B8 /* MatchRule.h */,
+				1D643FA8210735EE00F028B8 /* MatchRule.m */,
+				1D643FB4210735EE00F028B8 /* LengthRule.h */,
+				1D643FAD210735EE00F028B8 /* LengthRule.m */,
+			);
+			path = Rule;
+			sourceTree = "<group>";
+		};
+		1D643FBC2107365800F028B8 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				1DDDECEA20EE405E007CC735 /* BaseFormModel.h */,
+				1DDDECEB20EE405E007CC735 /* BaseFormModel.m */,
+				1DDDECE720EE1F0B007CC735 /* FieldFormModel.h */,
+				1DDDECE820EE1F0B007CC735 /* FieldFormModel.m */,
+			);
+			path = Form;
 			sourceTree = "<group>";
 		};
 		1D9B92C020F5017D00AFF65D /* UserList */ = {
@@ -177,6 +192,7 @@
 		1DDDECED20EE487B007CC735 /* Validator */ = {
 			isa = PBXGroup;
 			children = (
+				1D643FA6210735EE00F028B8 /* Rule */,
 				1DEE96FD20E4F76100DA0806 /* FieldsValidator.h */,
 				1DEE96FE20E4F76100DA0806 /* FieldsValidator.m */,
 			);
@@ -213,18 +229,17 @@
 		1DEE96DF20E4C7C100DA0806 /* RegistrationForm */ = {
 			isa = PBXGroup;
 			children = (
+				1D643F902107355400F028B8 /* Lib */,
 				1D9B92C720F50BEB00AFF65D /* CoreDataStack */,
 				1D34054F20ECE31D00D62CE5 /* Model */,
 				1D9B92CB20F5EEE600AFF65D /* CoreDataModel */,
-				1D9B92A720F3503E00AFF65D /* Rule */,
-				1DDDECED20EE487B007CC735 /* Validator */,
 				1D9B92C020F5017D00AFF65D /* UserList */,
 				1DEA900B20F7893700068833 /* UserInfo */,
+				1DEE96FC20E4ED2200DA0806 /* Buttons */,
 				1DEE96E020E4C7C100DA0806 /* AppDelegate.h */,
 				1DEE96E120E4C7C100DA0806 /* AppDelegate.m */,
 				1DEE96F620E4D85700DA0806 /* TableViewCell.h */,
 				1DEE96F720E4D85700DA0806 /* TableViewCell.m */,
-				1DEE96FC20E4ED2200DA0806 /* Buttons */,
 				1D9B92C420F50B8700AFF65D /* UserModel.xcdatamodeld */,
 				1DEE96E620E4C7C100DA0806 /* Main.storyboard */,
 				1DEE96E920E4C7C200DA0806 /* Assets.xcassets */,
@@ -315,29 +330,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DEE96E520E4C7C100DA0806 /* UserDetailViewController.m in Sources */,
+				1D643FB5210735EE00F028B8 /* Rule.m in Sources */,
 				1DEE96F820E4D85700DA0806 /* TableViewCell.m in Sources */,
-				1D9B92B920F3974B00AFF65D /* MatchRule.m in Sources */,
-				1D9B92B020F38F3400AFF65D /* EmailRule.m in Sources */,
 				1DEE96F020E4C7C200DA0806 /* main.m in Sources */,
 				1D44B66B20FDF80A00C581C3 /* ToDoFormModel.m in Sources */,
 				1DC3030C20F8CD7D00E7071E /* ToDoModel.m in Sources */,
-				1D9B92BF20F4E44C00AFF65D /* LengthRule.m in Sources */,
 				1DDDECEC20EE405E007CC735 /* BaseFormModel.m in Sources */,
-				1D9B92B320F3917100AFF65D /* PhoneRule.m in Sources */,
+				1D643FB6210735EE00F028B8 /* MatchRule.m in Sources */,
 				1D9B92C620F50B8700AFF65D /* UserModel.xcdatamodeld in Sources */,
-				1D9B92B620F3939600AFF65D /* PasswordRule.m in Sources */,
 				1DEE96FB20E4E87800DA0806 /* RFButton.m in Sources */,
-				1D9B92AA20F3507E00AFF65D /* Rule.m in Sources */,
 				1DDDECE920EE1F0B007CC735 /* FieldFormModel.m in Sources */,
 				1D9B92C320F5019F00AFF65D /* UserListTableViewController.m in Sources */,
 				1DEA900E20F7899A00068833 /* UserInfoTableViewController.m in Sources */,
+				1D643FBB210735EE00F028B8 /* PasswordRule.m in Sources */,
 				1D44B66E20FE319F00C581C3 /* ToDoAlertController.m in Sources */,
 				1D9B92CE20F5EF2100AFF65D /* UserModel.m in Sources */,
 				1DEA900A20F755A600068833 /* BaseManagedObject.m in Sources */,
+				1D643FBA210735EE00F028B8 /* PhoneRule.m in Sources */,
 				1DEA900720F63D8B00068833 /* CoreDataStack.m in Sources */,
+				1D643FB7210735EE00F028B8 /* LengthRule.m in Sources */,
 				1D34054E20ECE31700D62CE5 /* RegistrationFormModel.m in Sources */,
+				1D643FB9210735EE00F028B8 /* EmailRule.m in Sources */,
 				1DEE96E220E4C7C100DA0806 /* AppDelegate.m in Sources */,
-				1D9B92AD20F3565C00AFF65D /* NameRule.m in Sources */,
+				1D643FB8210735EE00F028B8 /* NameRule.m in Sources */,
 				1DEE96FF20E4F76100DA0806 /* FieldsValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

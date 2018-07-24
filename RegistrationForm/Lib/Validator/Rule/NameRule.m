@@ -10,15 +10,13 @@
 
 @implementation NameRule
 
-- (BOOL)validate {
-    
-    NSString *str = [NSString stringWithFormat:@"%@", self.value];
-    if (str.length < 3) {
-        return NO;
+@synthesize minLength = _minLength;
+
+- (NSInteger)minLength {
+    if (_minLength == 0) {
+        return 3;
     }
-    return YES;
+    return _minLength;
 }
-
-
 
 @end

@@ -16,6 +16,7 @@
 @property (nonatomic, assign) BOOL required;
 @property (nonatomic, readonly) BOOL isEmpty;
 
+- (instancetype)initWithModel:(id)model withProperty:(NSString *)propertyName message:(NSString *)message required:(BOOL)isRequired;
 
 - (BOOL)validate;
 - (id)value;
