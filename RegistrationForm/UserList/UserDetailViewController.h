@@ -14,4 +14,3 @@
 @property (nonatomic, strong) UserModel *userModel; 
 
 @end
-

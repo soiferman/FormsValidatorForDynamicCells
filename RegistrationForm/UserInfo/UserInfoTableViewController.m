@@ -126,7 +126,7 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
     return @"TO DO";
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     self.fullNameLabel.text = [NSString stringWithFormat:@"%@ %@", self.userModel.firstName, self.userModel.lastName];
     if (section == 0) {
@@ -145,12 +145,12 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
 
 
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-
     //Edit action
     UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
         [self.toDoAlertController editToDoWithModel:self.toDoArray[indexPath.row]];
     }];
     editAction.backgroundColor = [UIColor blueColor];
+    
 
     //Delete Action
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Delete"  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
@@ -167,6 +167,8 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
     
     return @[deleteAction,editAction];
 }
+
+
 
 #pragma mark - ToDoAlertControllerDelegate
 

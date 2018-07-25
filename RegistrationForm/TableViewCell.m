@@ -64,8 +64,7 @@
     [self.formModel validate];
     
     [self updateTableViewCellState:textField];
-    
-    // NSLog(@"%@", self.regModel.rowsArray);
+
 }
 
 

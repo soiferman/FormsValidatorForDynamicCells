@@ -23,13 +23,13 @@
 
 - (void)fillFields {
     
-    [[self addNameFieldWithTitle:@"First Name" andKey:@"firstName" withMessage:@"Введите имя"]addRule:[NameRule new]];
-    [[self addNameFieldWithTitle:@"Last Name" andKey:@"lastName" withMessage:@"Введите фамилию"]addRule:[NameRule new]];
+    [self addNameFieldWithTitle:@"First Name" andKey:@"firstName" withMessage:@"Введите имя"];
+    [self addNameFieldWithTitle:@"Last Name" andKey:@"lastName" withMessage:@"Введите фамилию"];
 
-    [[self addEmailFieldWithTitle:@"Email" andKey:@"email" required:YES withMessage:@"Введите правильный email адрес"] addRule:[EmailRule new]];
-    [[self addPhoneFieldWithTitle:@"Phone number" andKey:@"phone" required:NO withMessage:@"Введите корректный номер телефона"] addRule:[PhoneRule new]];
+    [self addEmailFieldWithTitle:@"Email" andKey:@"email" required:YES withMessage:@"Введите правильный email адрес"];
+    [self addPhoneFieldWithTitle:@"Phone number" andKey:@"phone" required:NO withMessage:@"Введите корректный номер телефона"];
 
-    [[self addPasswordFieldWithTitle:@"Password" andKey:@"password" withMessage:@"Пароль должен содержать минимум 6 символов"]addRule:[PasswordRule new]];
+    [self addPasswordFieldWithTitle:@"Password" andKey:@"password" withMessage:@"Пароль должен содержать минимум 6 символов"];
     [[self addPasswordFieldWithTitle:@"Confirm Password" andKey:@"confirmPassword" withMessage:@"Введенные пароли не совпадают"]addRule:[self matchRule]];
     
 }

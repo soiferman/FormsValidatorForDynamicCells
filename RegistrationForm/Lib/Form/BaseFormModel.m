@@ -7,8 +7,13 @@
 //
 
 #import "BaseFormModel.h"
-#import "NameRule.h"
 #import "UserModel.h"
+#import "FieldFormModel.h"
+#import "NameRule.h"
+#import "PhoneRule.h"
+#import "EmailRule.h"
+#import "PasswordRule.h"
+#import "MatchRule.h"
 
 @interface BaseFormModel ()
 
@@ -25,6 +30,7 @@
         self.validator = [[FieldsValidator alloc]init];
         self.rowsArray = [[NSMutableArray alloc]init];
         self.invalidFields = [[NSMutableArray alloc]init];
+        
         [self fillFields];
     }
     return self;
@@ -71,7 +77,11 @@
 }
 
 - (FieldFormModel *)addNameFieldWithTitle:(NSString *)title andKey:(NSString *)key withMessage:(NSString *)message {
-    return [self addFieldWithTitle:title andKey:key required:YES keyboardType:UIKeyboardTypeDefault withMessage:message];
+
+    FieldFormModel *model = [self addFieldWithTitle:title andKey:key required:YES keyboardType:UIKeyboardTypeDefault withMessage:message];
+    [model addRule:[NameRule new]];
+    
+    return model;
 }
 
 - (FieldFormModel *)addFieldWithTitle:(NSString *)title andKey:(NSString *)key withMessage:(NSString *)message {
@@ -86,16 +96,26 @@
    return [self addFieldWithTitle:title andKey:key required:required withMessage:message keyboardType:keyboardType secureTextEntry:NO];
 }
 
+//---
 - (FieldFormModel *)addPhoneFieldWithTitle:(NSString *)title andKey:(NSString *)key required:(BOOL)required withMessage:(NSString *)message {
-    return [self addFieldWithTitle:title andKey:key required:required keyboardType:UIKeyboardTypeNumberPad withMessage:message];
+    FieldFormModel *model = [self addFieldWithTitle:title andKey:key required:required keyboardType:UIKeyboardTypeNumberPad withMessage:message];
+    [model addRule:[PhoneRule new]];
+    
+    return model;
 }
 
+//---
 - (FieldFormModel *)addEmailFieldWithTitle:(NSString *)title andKey:(NSString *)key required:(BOOL)reqired withMessage:(NSString *)message {
-    return [self addFieldWithTitle:title andKey:key required:reqired keyboardType:UIKeyboardTypeEmailAddress withMessage:message];
+    FieldFormModel *model = [self addFieldWithTitle:title andKey:key required:reqired keyboardType:UIKeyboardTypeEmailAddress withMessage:message];
+    [model addRule:[EmailRule new]];
+    return model;
 }
 
-- (FieldFormModel *) addPasswordFieldWithTitle:(NSString *)title andKey:(NSString *)key withMessage:(NSString *)message{
-    return [self addFieldWithTitle:title andKey:key required:YES withMessage:message keyboardType:UIKeyboardTypeDefault secureTextEntry:YES];
+//---
+- (FieldFormModel *) addPasswordFieldWithTitle:(NSString *)title andKey:(NSString *)key withMessage:(NSString *)message {
+    FieldFormModel *model = [self addFieldWithTitle:title andKey:key required:YES withMessage:message keyboardType:UIKeyboardTypeDefault secureTextEntry:YES];
+    [model addRule:[PasswordRule new]];
+    return model;
 }
 
 
