@@ -148,9 +148,11 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
     //Edit action
     UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
         [self.toDoAlertController editToDoWithModel:self.toDoArray[indexPath.row]];
+
     }];
     editAction.backgroundColor = [UIColor blueColor];
-    
+    //editAction.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"edit"]];
+
 
     //Delete Action
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Delete"  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
@@ -159,12 +161,13 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
         [self.managedObjectContext save:nil];
 
         [self fetchingData];
-        
+
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         //---
     }];
     deleteAction.backgroundColor = [UIColor redColor];
-    
+    //deleteAction.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"delete"]];
+
     return @[deleteAction,editAction];
 }
 
