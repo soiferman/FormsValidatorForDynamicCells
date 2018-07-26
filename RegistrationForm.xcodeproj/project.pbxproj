@@ -21,6 +21,7 @@
 		1D9B92C620F50B8700AFF65D /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92C420F50B8700AFF65D /* UserModel.xcdatamodeld */; };
 		1D9B92CE20F5EF2100AFF65D /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B92CD20F5EF2100AFF65D /* UserModel.m */; };
 		1DC3030C20F8CD7D00E7071E /* ToDoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3030B20F8CD7D00E7071E /* ToDoModel.m */; };
+		1DD3803D2109D5080082C806 /* SwipeCellKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD3803C2109D5080082C806 /* SwipeCellKit.swift */; };
 		1DDDECE920EE1F0B007CC735 /* FieldFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDDECE820EE1F0B007CC735 /* FieldFormModel.m */; };
 		1DDDECEC20EE405E007CC735 /* BaseFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDDECEB20EE405E007CC735 /* BaseFormModel.m */; };
 		1DEA900720F63D8B00068833 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA900520F63D8B00068833 /* CoreDataStack.m */; };
@@ -65,6 +66,8 @@
 		1D9B92CD20F5EF2100AFF65D /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		1DC3030A20F8CD7D00E7071E /* ToDoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoModel.h; sourceTree = "<group>"; };
 		1DC3030B20F8CD7D00E7071E /* ToDoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoModel.m; sourceTree = "<group>"; };
+		1DD3803B2109D5070082C806 /* RegistrationForm-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RegistrationForm-Bridging-Header.h"; sourceTree = "<group>"; };
+		1DD3803C2109D5080082C806 /* SwipeCellKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCellKit.swift; sourceTree = "<group>"; };
 		1DDDECE720EE1F0B007CC735 /* FieldFormModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldFormModel.h; sourceTree = "<group>"; };
 		1DDDECE820EE1F0B007CC735 /* FieldFormModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FieldFormModel.m; sourceTree = "<group>"; };
 		1DDDECEA20EE405E007CC735 /* BaseFormModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseFormModel.h; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 				1DEE96E120E4C7C100DA0806 /* AppDelegate.m */,
 				1DEE96F620E4D85700DA0806 /* TableViewCell.h */,
 				1DEE96F720E4D85700DA0806 /* TableViewCell.m */,
+				1DD3803C2109D5080082C806 /* SwipeCellKit.swift */,
+				1DD3803B2109D5070082C806 /* RegistrationForm-Bridging-Header.h */,
 				1D9B92C420F50B8700AFF65D /* UserModel.xcdatamodeld */,
 				1DEE96E620E4C7C100DA0806 /* Main.storyboard */,
 				1DEE96E920E4C7C200DA0806 /* Assets.xcassets */,
@@ -290,6 +295,7 @@
 				TargetAttributes = {
 					1DEE96DC20E4C7C100DA0806 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -342,6 +348,7 @@
 				1DDDECE920EE1F0B007CC735 /* FieldFormModel.m in Sources */,
 				1D9B92C320F5019F00AFF65D /* UserListTableViewController.m in Sources */,
 				1DEA900E20F7899A00068833 /* UserInfoTableViewController.m in Sources */,
+				1DD3803D2109D5080082C806 /* SwipeCellKit.swift in Sources */,
 				1D643FBB210735EE00F028B8 /* PasswordRule.m in Sources */,
 				1D44B66E20FE319F00C581C3 /* ToDoAlertController.m in Sources */,
 				1D9B92CE20F5EF2100AFF65D /* UserModel.m in Sources */,
@@ -414,6 +421,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -434,6 +442,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -472,6 +481,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -485,6 +495,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -493,7 +504,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = N359L3MT2V;
 				INFOPLIST_FILE = RegistrationForm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -502,6 +515,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = gbsfo.com.RegistrationForm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./RegistrationForm/RegistrationForm-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -511,7 +526,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = N359L3MT2V;
 				INFOPLIST_FILE = RegistrationForm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -520,6 +537,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = gbsfo.com.RegistrationForm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./RegistrationForm/RegistrationForm-Bridging-Header.h";
 				SWIFT_VERSION = 3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
