@@ -10,6 +10,8 @@
 		1D34054E20ECE31700D62CE5 /* RegistrationFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D34054D20ECE31700D62CE5 /* RegistrationFormModel.m */; };
 		1D44B66B20FDF80A00C581C3 /* ToDoFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44B66A20FDF80A00C581C3 /* ToDoFormModel.m */; };
 		1D44B66E20FE319F00C581C3 /* ToDoAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D44B66D20FE319F00C581C3 /* ToDoAlertController.m */; };
+		1D4B789A210A05E400ED08D2 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B7897210A05E400ED08D2 /* MGSwipeButton.m */; };
+		1D4B789B210A05E400ED08D2 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B7899210A05E400ED08D2 /* MGSwipeTableCell.m */; };
 		1D643FB5210735EE00F028B8 /* Rule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D643FA7210735EE00F028B8 /* Rule.m */; };
 		1D643FB6210735EE00F028B8 /* MatchRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D643FA8210735EE00F028B8 /* MatchRule.m */; };
 		1D643FB7210735EE00F028B8 /* LengthRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D643FAD210735EE00F028B8 /* LengthRule.m */; };
@@ -45,6 +47,10 @@
 		1D44B66A20FDF80A00C581C3 /* ToDoFormModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoFormModel.m; sourceTree = "<group>"; };
 		1D44B66C20FE319F00C581C3 /* ToDoAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoAlertController.h; sourceTree = "<group>"; };
 		1D44B66D20FE319F00C581C3 /* ToDoAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoAlertController.m; sourceTree = "<group>"; };
+		1D4B7896210A05E400ED08D2 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		1D4B7897210A05E400ED08D2 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		1D4B7898210A05E400ED08D2 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		1D4B7899210A05E400ED08D2 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
 		1D643FA7210735EE00F028B8 /* Rule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rule.m; sourceTree = "<group>"; };
 		1D643FA8210735EE00F028B8 /* MatchRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchRule.m; sourceTree = "<group>"; };
 		1D643FA9210735EE00F028B8 /* PasswordRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordRule.h; sourceTree = "<group>"; };
@@ -116,6 +122,17 @@
 				1D44B66A20FDF80A00C581C3 /* ToDoFormModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1D4B7895210A05D800ED08D2 /* MGSwipe */ = {
+			isa = PBXGroup;
+			children = (
+				1D4B7898210A05E400ED08D2 /* MGSwipeButton.h */,
+				1D4B7897210A05E400ED08D2 /* MGSwipeButton.m */,
+				1D4B7896210A05E400ED08D2 /* MGSwipeTableCell.h */,
+				1D4B7899210A05E400ED08D2 /* MGSwipeTableCell.m */,
+			);
+			path = MGSwipe;
 			sourceTree = "<group>";
 		};
 		1D643F902107355400F028B8 /* Lib */ = {
@@ -242,6 +259,7 @@
 				1DEE96E020E4C7C100DA0806 /* AppDelegate.h */,
 				1DEE96E120E4C7C100DA0806 /* AppDelegate.m */,
 				1DEE96F620E4D85700DA0806 /* TableViewCell.h */,
+				1D4B7895210A05D800ED08D2 /* MGSwipe */,
 				1DEE96F720E4D85700DA0806 /* TableViewCell.m */,
 				1DD3803C2109D5080082C806 /* SwipeCellKit.swift */,
 				1DD3803B2109D5070082C806 /* RegistrationForm-Bridging-Header.h */,
@@ -352,10 +370,12 @@
 				1D643FBB210735EE00F028B8 /* PasswordRule.m in Sources */,
 				1D44B66E20FE319F00C581C3 /* ToDoAlertController.m in Sources */,
 				1D9B92CE20F5EF2100AFF65D /* UserModel.m in Sources */,
+				1D4B789B210A05E400ED08D2 /* MGSwipeTableCell.m in Sources */,
 				1DEA900A20F755A600068833 /* BaseManagedObject.m in Sources */,
 				1D643FBA210735EE00F028B8 /* PhoneRule.m in Sources */,
 				1DEA900720F63D8B00068833 /* CoreDataStack.m in Sources */,
 				1D643FB7210735EE00F028B8 /* LengthRule.m in Sources */,
+				1D4B789A210A05E400ED08D2 /* MGSwipeButton.m in Sources */,
 				1D34054E20ECE31700D62CE5 /* RegistrationFormModel.m in Sources */,
 				1D643FB9210735EE00F028B8 /* EmailRule.m in Sources */,
 				1DEE96E220E4C7C100DA0806 /* AppDelegate.m in Sources */,

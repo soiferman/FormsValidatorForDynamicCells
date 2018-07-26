@@ -14,6 +14,10 @@
 #import "ToDoFormModel.h"
 #import "ToDoAlertController.h"
 
+#import "RegistrationForm-Bridging-Header.h"
+
+#import "MGSwipeTableCell.h"
+
 
 @interface UserInfoTableViewController () <ToDoAlertControllerDelegate>
 
@@ -108,10 +112,33 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
     
     }
     else if (indexPath.section == 1) {
-        cell = [tableView dequeueReusableCellWithIdentifier:toDoCellIdentifier forIndexPath:indexPath];
+        
+        MGSwipeTableCell *cell = [tableView dequeueReusableCellWithIdentifier:toDoCellIdentifier forIndexPath:indexPath];
+        
+        MGSwipeButton *delete = [MGSwipeButton buttonWithTitle:@" Delete" icon:[UIImage imageNamed:@"delete"] backgroundColor:[UIColor redColor] callback:^BOOL(MGSwipeTableCell * _Nonnull cell) {
+            
+            [self.managedObjectContext deleteObject:[self.toDoArray objectAtIndex:indexPath.row]];
+            [self.managedObjectContext save:nil];
+            [self fetchingData];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            
+            return YES;
+        }];
+        
+        MGSwipeButton *edit = [MGSwipeButton buttonWithTitle:@" Edit" icon:[UIImage imageNamed:@"edit"] backgroundColor:[UIColor blueColor] callback:^BOOL(MGSwipeTableCell * _Nonnull cell) {
+            
+            [self.toDoAlertController editToDoWithModel:self.toDoArray[indexPath.row]];
+            
+            return YES;
+        }];
+        
+        
         cell.textLabel.text = self.toDoArray[indexPath.row].toDoEvent;
+        cell.rightSwipeSettings.transition = MGSwipeTransitionDrag;
+        cell.rightButtons = @[delete, edit];
+        
+        return cell;
     }
-    
     return cell;
 }
 
@@ -144,32 +171,32 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
 }
 
 
-- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //Edit action
-    UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
-        [self.toDoAlertController editToDoWithModel:self.toDoArray[indexPath.row]];
-
-    }];
-    editAction.backgroundColor = [UIColor blueColor];
-    //editAction.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"edit"]];
-
-
-    //Delete Action
-    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Delete"  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
-        // Deleting row from the data source
-        [self.managedObjectContext deleteObject:[self.toDoArray objectAtIndex:indexPath.row]];
-        [self.managedObjectContext save:nil];
-
-        [self fetchingData];
-
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        //---
-    }];
-    deleteAction.backgroundColor = [UIColor redColor];
-    //deleteAction.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"delete"]];
-
-    return @[deleteAction,editAction];
-}
+//- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    //Edit action
+//    UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
+//        [self.toDoAlertController editToDoWithModel:self.toDoArray[indexPath.row]];
+//
+//    }];
+//    editAction.backgroundColor = [UIColor blueColor];
+//    //editAction.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"edit"]];
+//
+//
+//    //Delete Action
+//    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Delete"  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
+//        // Deleting row from the data source
+//        [self.managedObjectContext deleteObject:[self.toDoArray objectAtIndex:indexPath.row]];
+//        [self.managedObjectContext save:nil];
+//
+//        [self fetchingData];
+//
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//        //---
+//    }];
+//    deleteAction.backgroundColor = [UIColor redColor];
+//    //deleteAction.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"delete"]];
+//
+//    return @[deleteAction,editAction];
+//}
 
 
 
