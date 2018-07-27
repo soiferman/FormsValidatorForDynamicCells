@@ -132,9 +132,10 @@ static NSString *toDoCellIdentifier = @"toDoCellIdentifier";
             return YES;
         }];
         
-        
         cell.textLabel.text = self.toDoArray[indexPath.row].toDoEvent;
         cell.rightSwipeSettings.transition = MGSwipeTransitionDrag;
+       // cell.rightSwipeSettings.allowsButtonsWithDifferentWidth = YES;
+        
         cell.rightButtons = @[delete, edit];
         
         return cell;
